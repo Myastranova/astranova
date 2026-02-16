@@ -1,13 +1,112 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>AstraNova</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AstraNova</title>
+  <meta name="description" content="AstraNova is an AI-powered astrology app. Coming soon on iOS and Android." />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e2e8f0;
+      --teal:#0f766e;
+      --tealSoft:#e6fffb;
+      --orange:#f97316;
+      --orangeSoft:#fff7ed;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+    .wrap{max-width:1040px;margin:0 auto;padding:26px 16px 56px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+    .mark{width:12px;height:12px;border-radius:4px;background:linear-gradient(135deg,var(--teal),var(--orange))}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-weight:600}
+    nav a:hover{color:var(--text)}
+    .hero{margin-top:34px;display:grid;grid-template-columns:1.25fr .75fr;gap:16px}
+    @media (max-width:880px){.hero{grid-template-columns:1fr}}
+    .card{border:1px solid var(--line);border-radius:18px;padding:20px;background:#fff}
+    h1{font-size:42px;line-height:1.08;margin:0 0 10px}
+    .lead{margin:0 0 14px;color:var(--muted);font-size:16px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+    .chip{display:inline-flex;align-items:center;padding:7px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);font-weight:600;font-size:13px}
+    .cta{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:12px;text-decoration:none;font-weight:800;border:1px solid transparent}
+    .btn.teal{background:var(--teal);color:#fff}
+    .btn.orange{background:var(--orange);color:#fff}
+    .btn.ghost{background:#fff;border-color:var(--line);color:var(--text)}
+    .note{margin-top:10px;color:var(--muted);font-size:13px}
+    .split{display:grid;grid-template-columns:1fr;gap:10px}
+    .panel{border:1px solid var(--line);border-radius:14px;padding:14px}
+    .panel.teal{background:linear-gradient(0deg,var(--tealSoft),#fff)}
+    .panel.orange{background:linear-gradient(0deg,var(--orangeSoft),#fff)}
+    .panel h2{margin:0 0 8px;font-size:16px}
+    ul{margin:0 0 0 18px;color:var(--muted)}
+    footer{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;color:var(--muted);font-size:14px}
+    footer a{color:var(--muted);text-decoration:none;font-weight:600}
+    footer a:hover{color:var(--text)}
+  </style>
 </head>
 <body>
-    <h1>Welcome to AstraNova!</h1>
-    <p>Current Date and Time (UTC): 2026-02-16 10:22:44</p>
-    <p>User: Myastranova</p>
+  <div class="wrap">
+    <header>
+      <div class="brand"><span class="mark"></span> AstraNova</div>
+      <nav>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="mailto:astranova2525@gmail.com">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <h1>Astrology, made practical.</h1>
+        <p class="lead">AstraNova is an AI-powered astrology app. We're launching soon on iOS and Android.</p>
+
+        <div class="cta">
+          <a class="btn teal" href="#" onclick="return false;">App Store (coming soon)</a>
+          <a class="btn orange" href="#" onclick="return false;">Google Play (coming soon)</a>
+          <a class="btn ghost" href="mailto:astranova2525@gmail.com">Email us</a>
+        </div>
+
+        <p class="note">We'll update these buttons to the official store links once the apps are live.</p>
+
+        <div class="chips">
+          <span class="chip">Privacy-first</span>
+          <span class="chip">Personalized insights</span>
+          <span class="chip">Daily guidance</span>
+        </div>
+      </div>
+
+      <div class="split">
+        <div class="panel teal">
+          <h2>For users</h2>
+          <ul>
+            <li>Clear explanations, not jargon.</li>
+            <li>Actionable daily insights.</li>
+            <li>Support via email.</li>
+          </ul>
+        </div>
+        <div class="panel orange">
+          <h2>For trust</h2>
+          <ul>
+            <li>Terms & Conditions and Privacy Policy are public.</li>
+            <li>No download links here until official store release.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> AstraNova · <a href="mailto:astranova2525@gmail.com">astranova2525@gmail.com</a></div>
+      <div>
+        <a href="/privacy.html">Privacy Policy</a> ·
+        <a href="/terms.html">Terms & Conditions</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>
